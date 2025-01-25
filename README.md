@@ -1,7 +1,7 @@
 //environment variables
 <p>PORT</p>    
-MONGO_URI  
-SECRET_KEY  
-RESENT_KEY  
-EMAIL_DOMAIN
+<p>MONGO_URI</p>
+<p>SECRET_KEY</p> 
+<p>RESENT_KEY</p>
+<p>EMAIL_DOMAIN</p>
   
