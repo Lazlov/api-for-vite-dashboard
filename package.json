@@ -31,7 +31,7 @@
     "typescript": "^4.7.4"
   },
   "scripts": {
-    "start": "ts-node ./src/server.ts",
+    "start": "tsc ./src/server.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",              
     "dev": "nodemon -r ts-node/register ./src/server.ts" 
