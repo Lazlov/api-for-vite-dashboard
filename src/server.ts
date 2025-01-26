@@ -12,14 +12,22 @@ dotenv.config();
 
 const app = express();
 const port = process.env.PORT;
+const domain = process.env.DOMAIN;
+const apiurl = process.env.API_URL
 
 app.use(express.json());
 app.use(cookieParcer());
 
+// app.use(
+//   cors({
+//     credentials: true,
+//     origin: `http://${domain}:${port}`,
+//   })
+// );
 app.use(
   cors({
     credentials: true,
-    origin: "http://localhost:3000",
+    origin: apiurl,
   })
 );
 
@@ -38,8 +46,8 @@ mongoose.set("strictQuery", true);
 mongoose
   .connect(`${db}`)
   .then(() => {
-    app.listen(port, () => {
-      console.log(`[server]: Db is running at https://localhost:${port}`);
+    app.listen(apiurl, () => {
+      console.log(`[server]: Db is running at ${apiurl}`);
     });
   })
   .catch((error) => console.log(error));
