@@ -32,10 +32,9 @@
     "typescript": "^4.9.5"
   },
   "scripts": {
-    "start": "ts-node ./src/server.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "node --no-warnings=ExperimentalWarning --loader ts-node/esm server.js",
-    "dev": "nodemon -r ts-node/register ./src/server.ts"
+    "build": "node --no-warnings=ExperimentalWarning --loader ts-node/esm server.ts",
+    "dev": "nodemon ./src/server.ts"
   },
   "author": "",
   "license": "ISC"
