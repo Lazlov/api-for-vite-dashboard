@@ -34,7 +34,7 @@
   "scripts": {
     "start": "tsc ./src/server.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc",
+    "build": "node --no-warnings=ExperimentalWarning --loader ts-node/esm server.ts",
     "dev": "nodemon -r ts-node/register ./src/server.ts"
   },
   "author": "",
