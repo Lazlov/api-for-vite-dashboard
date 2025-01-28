@@ -1,10 +1,10 @@
 import express from "express";
 import dotenv from "dotenv";
 import authRouter from "./routes/auth.js";
-import productsRouter from "./routes/products";
+import productsRouter from "./routes/products.js";
 
-import usersRouter from "./routes/users";
-import emailRouter from "./routes/activation";
+import usersRouter from "./routes/users.js";
+import emailRouter from "./routes/activation.js";
 import cors from "cors";
 import cookieParcer from "cookie-parser";
 import mongoose from "mongoose";

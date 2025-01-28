@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import User from "../models/userModel";
+import User from "../models/userModel.js";
 import { Request, Response } from "express";
 import bcrypt from "bcrypt";
 import dotenv from "dotenv";

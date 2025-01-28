@@ -1,4 +1,4 @@
-import Product from "../models/productModel";
+import Product from "../models/productModel.js";
 import { Request, Response } from "express";
 import mongoose from "mongoose";
 
