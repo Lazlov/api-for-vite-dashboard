@@ -12,7 +12,7 @@ import mongoose from "mongoose";
 dotenv.config();
 
 const app = express();
-const port = process.env.PORT;
+const port = process.env.PORT || 4000
 const domain = process.env.DOMAIN;
 const apiurl = process.env.API_URL
 
@@ -28,7 +28,7 @@ app.use(cookieParcer());
 app.use(
   cors({
     credentials: true,
-    origin: apiurl,
+    origin: `${apiurl}:${port}`,
   })
 );
 
@@ -48,7 +48,7 @@ mongoose
   .connect(`${db}`)
   .then(() => {
     app.listen(apiurl, () => {
-      console.log(`[server]: Db is running at ${apiurl}`);
+      console.log(`[server]: Db is running at ${apiurl}:${port}`);
     });
   })
   .catch((error) => console.log(error));
