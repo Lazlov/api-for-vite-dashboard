@@ -28,7 +28,7 @@ app.use(cookieParcer());
 app.use(
   cors({
     credentials: true,
-    origin: `${apiurl}:${port}`,
+    origin: `${apiurl}`,
   })
 );
 
@@ -47,7 +47,7 @@ mongoose.set("strictQuery", true);
 mongoose
   .connect(`${db}`)
   .then(() => {
-    app.listen(apiurl, () => {
+    app.listen(port, () => {
       console.log(`[server]: Db is running at ${apiurl}:${port}`);
     });
   })
