@@ -28,7 +28,7 @@ app.use(cookieParcer());
 app.use(
   cors({
     credentials: true,
-    origin: `${apiurl}`,
+    origin: `*`,
   })
 );
 
