@@ -28,7 +28,7 @@ app.use(cookieParcer());
 app.use(
   cors({
     credentials: true,
-    origin: ['http://localhost:3000','https://vite-dashboard-eve.pages.dev.'],
+    origin: ['http://localhost:3000','https://vite-dashboard-eve.pages.dev'],
   })
 );
 
