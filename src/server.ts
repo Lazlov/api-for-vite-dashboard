@@ -15,6 +15,7 @@ const app = express();
 const port = process.env.PORT || 4000
 const domain = process.env.DOMAIN;
 const apiurl = process.env.API_URL
+const frontendurl= process.env.FRONT_END_URL
 
 app.use(express.json());
 app.use(cookieParcer());
@@ -28,7 +29,7 @@ app.use(cookieParcer());
 app.use(
   cors({
     credentials: true,
-    origin: ['http://localhost:3000','https://vite-dashboard-eve.pages.dev'],
+    origin: ['http://localhost:3000','https://vite-dashboard-eve.pages.dev',`${frontendurl}`],
   })
 );
 
