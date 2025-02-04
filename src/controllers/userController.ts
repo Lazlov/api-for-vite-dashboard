@@ -11,6 +11,7 @@ dotenv.config();
 const secret = process.env.SECRET_KEY;
 const resentKey = process.env.RESENT_KEY;
 const emailDomain = process.env.EMAIL_DOMAIN
+const frontendurl = process.env.FRONT_END_URL
 
 const resend = new Resend(resentKey);
 
@@ -47,7 +48,7 @@ const createUser = async (req: Request, res: Response) => {
     // Encode the token
     const token = generateEmailToken.replace(/\./g, "~");
 
-    const verificationLink = `http://localhost:3000/d/activate/${token}`;
+    const verificationLink = `${frontendurl}/d/activate/${token}`;
     const { data, error } = await resend.emails.send({
       from: `Registration <noreply@${emailDomain}>`,
       to: email,
