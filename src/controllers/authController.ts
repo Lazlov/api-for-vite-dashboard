@@ -9,6 +9,8 @@ dotenv.config();
 const secret = process.env.SECRET_KEY;
 
 const resentKey = process.env.RESENT_KEY;
+const frontendurl = process.env.FRONT_END_URL
+const emailDomain = process.env.EMAIL_DOMAIN
 
 const resend = new Resend(resentKey);
 const accessToken = (id: any, email: any, roles: any, isVerified: any) => {
@@ -129,10 +131,10 @@ const resetPassword = async (req: Request, res: Response) => {
     // Replace dots with hyphens in the token because react router acting like dot is a new route
     const newToken = generatePasswordToken.replace(/\./g, "~");
 
-    const verificationLink = `http://localhost:3000/new-password/${newToken}`;
+    const verificationLink = `${frontendurl}/new-password/${newToken}`;
 
     const { data, error } = await resend.emails.send({
-      from: "Acme <onboarding@resend.dev>",
+      from: `Registration <noreply@${emailDomain}>`,
 
       // to: [email],
       to: email,

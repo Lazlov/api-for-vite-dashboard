@@ -9,6 +9,7 @@ dotenv.config();
 const secret = process.env.SECRET_KEY;
 
 const resentKey = process.env.RESENT_KEY;
+const frontendurl = process.env.FRONT_END_URL
 
 const resend = new Resend(resentKey);
 
@@ -107,7 +108,7 @@ const resendActivationToken = async (req: Request, res: Response) => {
     // Replace dots with hyphens in the token because react router acting like dot is a new route
     const newToken = generateEmailToken.replace(/\./g, "~");
 
-    const verificationLink = `http://localhost:3000/d/activate/${newToken}`;
+    const verificationLink = `${frontendurl}d/activate/${newToken}`;
 
     const { data, error } = await resend.emails.send({
       from: "Acme <onboarding@resend.dev>",
