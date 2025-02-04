@@ -4,7 +4,7 @@ import { Request, Response } from "express";
 import bcrypt from "bcrypt";
 import dotenv from "dotenv";
 
-import * as jwt from "jsonwebtoken";
+import jwt from "jsonwebtoken"
 import { Resend } from "resend";
 
 dotenv.config();
